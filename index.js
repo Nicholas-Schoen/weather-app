@@ -7,18 +7,29 @@ const weatherDescription = document.getElementById("weather-description");
 const toggle = document.getElementById("toggle-switch");
 
 const geocodeApiKey = "65fa47d3931a3517084361bune5a288";
-const geocodeUrl = `https://geocode.maps.co/search?q=${locationInput.value}&api_key=${geocodeApiKey}`;
 
 const openWeatherApiKey = "01d54155ab7c730a05cdbd85326bd430";
+/*
 const openWeatherUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${openWeatherApiKey}`;
+*/
+function getGeocodeData() {
+    const geocodeUrl = `https://geocode.maps.co/search?q=${locationInput.value}&api_key=${geocodeApiKey}`;
 
-
-
-
-
-function getLocationData() {
-
+    fetch(geocodeUrl) 
+    .then(Response => {
+        if (!Response.ok) {
+            throw new Error("Response not ok")
+        }
+        return Response.json();
+    })
+    .then(data => {
+        console.log("Raw JSON:", data);
+    })
+    .catch(error => {
+        console.error("Error", error);
+    })
 };
 
+function getLocationData() {};
 
-button.addEventListener("submit");
+button.addEventListener("click", getGeocodeData);
