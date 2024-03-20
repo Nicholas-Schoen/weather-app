@@ -24,10 +24,10 @@ function getGeocodeData() {
         return response.json();
     })
     .then(data => {
-        console.log("Latitude: ", data[0].lat);
-        console.log("Longitude: ", data[0].lon);
+        console.log(data)
         latitude = data[0].lat;
         longitude = data[0].lon;
+        cityName.innerText = data[0].display_name.split(",")[0];
         getLocationData();
     })
     .catch(error => {
@@ -47,12 +47,12 @@ function getLocationData() {
     })
     .then(data => {
         console.log("Raw weather API JSON data: ", data)
+        weatherDescription.innerText = data.current.weather[0].description;
     })
 };
 
-function getWeatherData() {
-    getGeocodeData;
-    getLocationData;
-}
+function getWeather() {
+    getGeocodeData();
+};
 
-button.addEventListener("click", getGeocodeData);
+button.addEventListener("click", getWeather);
