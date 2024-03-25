@@ -47,12 +47,12 @@ function getLocationData() {
         return response.json();
     })
     .then(data => {
-        const temp = localStorage.getItem(JSON.parse(data.current.temp));
+        const temp = localStorage.getItem("tempratrue");
         const tempFahrenheit = Math.round(1.8 * (temp - 273) + 32);
         const tempCelcius = Math.round(temp - 273.15);
         const weatherIcon = data.current.weather[0].icon;
 
-        localStorage.setItem("tempatrue", data.current.temp);
+        localStorage.setItem("tempratrue", data.current.temp);
         console.log(data)
         temprature.innerText = tempFahrenheit + "°F";
         weatherDescription.innerText = data.current.weather[0].description;
@@ -66,12 +66,12 @@ function getWeather() {
     getGeocodeData();
 };
 
-function toggleTemps() {
-    if (!toggle.checked) {
-        temprature.innerText = tempCelcius + "°F";
-    } else {
-        temprature.innerText = tempFahrenheit + "°c";
-    };
-};
+// function toggleTemps() {
+//     if (!toggle.checked) {
+//         temprature.innerText = tempCelcius + "°F";
+//     } else {
+//         temprature.innerText = tempFahrenheit + "°c";
+//     };
+// };
 
 button.addEventListener("click", getWeather);
