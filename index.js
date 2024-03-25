@@ -47,12 +47,13 @@ function getLocationData() {
         return response.json();
     })
     .then(data => {
-        console.log("Raw weather API JSON data: ", data)
-        const temp = data.current.temp;
+        const temp = localStorage.getItem(JSON.parse(data.current.temp));
         const tempFahrenheit = Math.round(1.8 * (temp - 273) + 32);
         const tempCelcius = Math.round(temp - 273.15);
         const weatherIcon = data.current.weather[0].icon;
 
+        localStorage.setItem("tempatrue", data.current.temp);
+        console.log(data)
         temprature.innerText = tempFahrenheit + "°F";
         weatherDescription.innerText = data.current.weather[0].description;
         display.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png"
@@ -67,9 +68,9 @@ function getWeather() {
 
 function toggleTemps() {
     if (!toggle.checked) {
-        temprature.innerText = tempCelcius + "°C";
+        temprature.innerText = tempCelcius + "°F";
     } else {
-        temprature.innerText = tempFahrenheit + "°F";
+        temprature.innerText = tempFahrenheit + "°c";
     };
 };
 
