@@ -25,3 +25,14 @@
     border: none;
     outline: none;
 }
+
+#button {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    background-color: lightgray;
+    border: none;
+}
+.feather {
+    color: grey;
+}
