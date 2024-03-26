@@ -4,11 +4,22 @@
 }
 
 * {
-    border: boarder-box;
-    margin: 0;
+    border: border-box;
+    font-size: 62.5%;
 }
 
 .search {
+    padding-top: 2rem;
     margin: auto;
-    width: 50%;
+    width: 95vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+#location-input {
+    font-size: 2rem;
+    width: 75%;
+    padding-left: 1rem;
+    border-radius: 2rem;
+    border-color: grey;
 }
