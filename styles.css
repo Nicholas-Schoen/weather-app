@@ -1,6 +1,6 @@
 :root {
-    --main-color, #d8ffdd;
-    --secondary-color, #5a0002;
+    --main-color: #d8ffdd;
+    --secondary-color: #5a0002;
 }
 
 * {
@@ -21,5 +21,7 @@
     width: 75%;
     padding-left: 1rem;
     border-radius: 2rem;
-    border-color: grey;
+    background-color: lightgray;
+    border: none;
+    outline: none;
 }
