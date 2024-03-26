@@ -36,3 +36,9 @@
 .feather {
     color: grey;
 }
+
+.hero-text {
+    font-size: 3rem;
+    margin: 7rem;
+    text-align: center;
+}
