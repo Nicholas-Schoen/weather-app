@@ -1,4 +1,14 @@
+:root {
+    --main-color, #d8ffdd;
+    --secondary-color, #5a0002;
+}
+
 * {
     border: boarder-box;
     margin: 0;
+}
+
+.search {
+    margin: auto;
+    width: 50%;
 }
