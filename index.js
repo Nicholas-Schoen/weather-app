@@ -16,6 +16,7 @@ let tempCelcius;
 
 function getGeocodeData() {
     const geocodeUrl = `https://geocode.maps.co/search?q=${locationInput.value}&api_key=${geocodeApiKey}`;
+    
 
     fetch(geocodeUrl) 
     .then(response => {
@@ -47,30 +48,43 @@ function getLocationData() {
         return response.json();
     })
     .then(data => {
-        console.log("Raw weather API JSON data: ", data)
-        const temp = data.current.temp;
-        const tempFahrenheit = Math.round(1.8 * (temp - 273) + 32);
-        const tempCelcius = Math.round(temp - 273.15);
+        localStorage.setItem("temperature", data.current.temp);
+        const temp = parseFloat(localStorage.getItem("temperature"));
+         tempFahrenheit = Math.round(1.8 * (temp - 273.15) + 32);
+         tempCelcius = Math.round(temp - 273.15);
         const weatherIcon = data.current.weather[0].icon;
 
-        temprature.innerText = tempFahrenheit + "°F";
+        
+        console.log(data)
+        if (!toggle.checked) {
+            temprature.innerText = tempFahrenheit + "°F";
+        } else {
+            temprature.innerText = tempCelcius + "°C";
+        };
         weatherDescription.innerText = data.current.weather[0].description;
         display.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png"
          alt="a graphic of the current weather">`
-         toggle.addEventListener("click", toggleTemps);
     })
 };
 
 function getWeather() {
+    localStorage.clear();
+    event.preventDefault();
+    temprature.innerText = "";
     getGeocodeData();
+    getLocationData();
 };
 
 function toggleTemps() {
     if (!toggle.checked) {
-        temprature.innerText = tempCelcius + "°C";
-    } else {
         temprature.innerText = tempFahrenheit + "°F";
+    } else {
+        temprature.innerText = tempCelcius + "°C";
     };
 };
 
+
 button.addEventListener("click", getWeather);
+toggle.addEventListener("click", toggleTemps);
+
+
