@@ -61,3 +61,8 @@
     height: 25rem;
     width: 25rem;
 }
+
+.weather-description {
+    text-align: center;
+    font-size: 3rem;
+}
