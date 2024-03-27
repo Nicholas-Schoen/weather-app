@@ -38,8 +38,14 @@
 }
 
 .hero-text {
-    font-size: 3rem;
+    font-size: 7rem;
     margin-top: 7rem;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.temprature {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
 }
