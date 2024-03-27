@@ -99,7 +99,7 @@
     width: 2.6rem;
     left: 0.4rem;
     bottom: 0.4rem;
-    background-color: black;
+    background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
@@ -112,7 +112,7 @@ input:focus + .slider {
     box-shadow: 0, 0, 0.1rem, #2196f3;
 }
 
-input:checked + slider::before {
+input:checked + .slider::before {
     -webkit-transform: translateX(2.6rem);
     -ms-transform: translateX(2.6rem);
     transform: translateX(2.6rem);
