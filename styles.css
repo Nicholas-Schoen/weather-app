@@ -148,5 +148,9 @@ input:checked + .slider::before {
         margin: auto;
     }
 
+    #location-input {
+        height: 4rem;
+    }
+
     
 }
