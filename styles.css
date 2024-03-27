@@ -53,8 +53,11 @@
 }
 
 .weather-pic {
-    height: 10rem;
-    width: 90vw;
     margin: auto;
     text-align: center;
+}
+
+.weather-pic > img {
+    height: 25rem;
+    width: 25rem;
 }
