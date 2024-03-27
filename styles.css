@@ -141,3 +141,22 @@ input:checked + .slider::before {
 .slider.round::before {
     border-radius: 50%;
 }
+
+@media  screen and (min-width: 1000px) {
+    * {
+        max-width: 1220px;
+        margin: auto;
+    }
+
+    #location-input {
+        height: 4rem;
+    }
+
+    #location-input::placeholder {
+        text-align: center;
+    }
+
+    #location-input:focus::placeholder {
+        color: transparent;
+    }
+}
