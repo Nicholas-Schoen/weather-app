@@ -53,6 +53,8 @@
 }
 
 .weather-pic {
+    height: 25rem;
+    width: 25rem;
     margin: auto;
     text-align: center;
 }
@@ -65,9 +67,12 @@
 .weather-description {
     text-align: center;
     font-size: 3rem;
+    height: 4.14rem;
 }
 
 .switch {
+    margin-right: 1.5rem;
+    float: right;
     position: relative;
     display: inline-block;
     width: 6rem;
