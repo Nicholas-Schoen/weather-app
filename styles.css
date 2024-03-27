@@ -74,8 +74,16 @@ body {
     height: 4.14rem;
 }
 
-.switch {
+.units {
+    font-size: 3rem;
+    text-align: right;
+    margin-top: 7rem;
     margin-right: 1.5rem;
+
+}
+
+.switch {
+    margin-right: 4rem;
     float: right;
     position: relative;
     display: inline-block;
