@@ -39,6 +39,7 @@
 
 .hero-text {
     font-size: 3rem;
-    margin: 7rem;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
