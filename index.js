@@ -5,7 +5,7 @@ const temprature = document.getElementById("temprature");
 const display = document.getElementById("picture-display");
 const weatherDescription = document.getElementById("weather-description");
 const toggle = document.getElementById("celcius-toggle");
-const units = document.getElementsByClassName("units");
+const units = document.getElementById("units");
 
 const geocodeApiKey = "65fa47d3931a3517084361bune5a288";
 const openWeatherApiKey = "01d54155ab7c730a05cdbd85326bd430";
@@ -82,7 +82,7 @@ function toggleTemps() {
         units.innerText = "Fahrenheit";
     } else {
         temprature.innerText = tempCelcius + "°C";
-        units.innerText = "Celcius"
+        units.innerText = "Celcius";
     };
 };
 
