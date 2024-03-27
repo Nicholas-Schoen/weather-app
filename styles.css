@@ -152,5 +152,11 @@ input:checked + .slider::before {
         height: 4rem;
     }
 
-    
+    #location-input::placeholder {
+        text-align: center;
+    }
+
+    #location-input:focus::placeholder {
+        color: transparent;
+    }
 }
