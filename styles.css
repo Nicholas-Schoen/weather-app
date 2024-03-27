@@ -8,6 +8,10 @@
     font-size: 62.5%;
 }
 
+body {
+    background-color: #fff;
+    color: var(--secondary-color);
+}
 .search {
     padding-top: 2rem;
     margin: auto;
@@ -21,7 +25,7 @@
     width: 75%;
     padding-left: 1rem;
     border-radius: 2rem;
-    background-color: lightgray;
+    background-color: var(--main-color);
     border: none;
     outline: none;
 }
@@ -30,7 +34,7 @@
     width: 4.2rem;
     height: 4.2rem;
     border-radius: 50%;
-    background-color: lightgray;
+    background-color: var(--main-color);
     border: none;
 }
 .feather {
@@ -104,17 +108,17 @@
     width: 2.6rem;
     left: 0.4rem;
     bottom: 0.4rem;
-    background-color: white;
+    background-color: var(--main-color);
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 
 input:checked + .slider {
-    background-color: #2196f3;
+    background-color: var(--secondary-color);
 }
 
 input:focus + .slider {
-    box-shadow: 0, 0, 0.1rem, #2196f3;
+    box-shadow: 0, 0, 0.1rem, var(--secondary-color);
 }
 
 input:checked + .slider::before {
